@@ -9,8 +9,9 @@ export const getRouter = () => {
   const router = createRouter({
     routeTree,
     context: { queryClient },
+    // Matches vite `base` so the site works from a GitHub Pages project subdirectory.
+    basepath: import.meta.env.BASE_URL,
     scrollRestoration: true,
-    // Lets Query own freshness; set caching defaults on the QueryClient, not the router.
     defaultPreloadStaleTime: 0,
   });
 
