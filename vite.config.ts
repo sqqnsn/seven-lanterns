@@ -5,8 +5,8 @@
 // That disables the server build and prerenders every page to plain HTML.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-const isStatic = process.env.GITHUB_PAGES === "true";
-const base = isStatic ? process.env.BASE_PATH || "/" : "/";
+const isStatic = process.env["GITHUB_PAGES"] === "true";
+const base = isStatic ? process.env["BASE_PATH"] || "/" : "/";
 
 export default defineConfig(
   isStatic
