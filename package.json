@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:pages": "vite build && cp dist/client/index.html dist/client/404.html"
   },
   "overrides": {
     "rolldown": "1.2.1"

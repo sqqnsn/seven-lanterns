@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Static GitHub Pages build is gated by `GITHUB_PAGES=true` in vite.config.ts (nitro off, prerender on, `BASE_PATH` as vite base); keep the default config for Lovable preview. Why: deploy without a server from a repo subdirectory.
+- Always build URLs with `import.meta.env.BASE_URL` (router basepath, game iframe). Why: absolute `/` paths break under a project subdirectory.
+- The game page is `/game`, not `/play`, because `public/play/` holds the Ren'Py export. Why: avoids prerendered HTML colliding with the game's index.html.
