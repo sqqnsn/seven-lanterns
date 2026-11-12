@@ -11,6 +11,7 @@ export const getRouter = () => {
     context: { queryClient },
     // Matches vite `base` so the site works from a GitHub Pages project subdirectory.
     basepath: import.meta.env.BASE_URL,
+    trailingSlash: "preserve",
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
   });
